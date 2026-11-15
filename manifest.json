@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Lovegobuy Link Redirect",
+  "version": "1.0",
+  "description": "Propose de rediriger les liens Weidian, Taobao et 1688 vers Lovegobuy.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.weidian.com/*",
+    "*://*.taobao.com/*",
+    "*://*.tmall.com/*",
+    "*://*.1688.com/*",
+    "*://*.youshop10.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [{
+    "resources": ["confirm.html"],
+    "matches": ["<all_urls>"]
+  }]
+}
